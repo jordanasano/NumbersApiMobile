@@ -5,15 +5,18 @@ import { Text } from "react-native";
  * 
  * state: 
  * props: 
- * -fact (str)
+ * -widgetFact (str)
  * -addFact (func)
  * -displayPath (str)
  * WidgetContainer-> RandomFactLinks FactDisplay
  */
 
- const FactDisplay = () => {
+ const FactDisplay = ({ widgetFact, addFact, displayPath }) => {
     return (
-        <Text>Fact Display!</Text>
+        <>
+            <Text>numbersapi.com/{displayPath}</Text>
+            <Text>{widgetFact}</Text>
+        </>
     )
 }
 
