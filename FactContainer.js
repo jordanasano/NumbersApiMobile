@@ -1,3 +1,8 @@
+import ExampleContainer from "./ExampleContainer";
+import WidgetContainer from "./WidgetContainer";
+import Socials from "./Socials";
+import React from "react";
+
 /** Fact Container
  * 
  * state: 
@@ -9,7 +14,14 @@
  *
  * App-> Fact Container -> WidgetContainer, Socials, ExampleContainer
  */
-
  const FactContainer = () => {
-
+    return (
+        <>
+            <WidgetContainer />
+            <Socials />
+            <ExampleContainer />
+        </>
+    )
 }
+
+export default FactContainer;

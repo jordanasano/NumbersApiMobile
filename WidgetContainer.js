@@ -1,3 +1,5 @@
+import React from "react";
+
 /** Widget Container
  * 
  * state: 
@@ -11,6 +13,16 @@
  * FactContainer -> WidgetContainer-> RandomFactLinks FactDisplay
  */
 
- const WidgetContainer = () => {
+import FactDisplay from "./FactDisplay";
+import RandomFactLinks from "./RandomFactLinks";
 
+ const WidgetContainer = () => {
+    return (
+        <>
+            <RandomFactLinks />
+            <FactDisplay />
+        </>
+    )
 }
+
+export default WidgetContainer;

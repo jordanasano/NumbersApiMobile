@@ -1,3 +1,6 @@
+import React from "react";
+import ExampleBox from "./ExampleBox";
+
 /** Example Container
  * 
  * state: none
@@ -8,5 +11,9 @@
  */
 
 const ExampleContainer = () => {
-
+    return (
+        <ExampleBox />
+    )
 }
+
+export default ExampleContainer;

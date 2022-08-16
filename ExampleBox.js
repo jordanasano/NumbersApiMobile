@@ -1,3 +1,6 @@
+import React from "react";
+import { Text } from "react-native";
+
 /** ExampleBox
  * 
  * state: none
@@ -9,5 +12,9 @@
 
 
 const ExampleBox = () => {
-
+    return (
+        <Text>Example Box!</Text>
+    )
 }
+
+export default ExampleBox;

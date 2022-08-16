@@ -1,3 +1,6 @@
+import React from "react";
+import { Text } from "react-native";
+
 /** Documentation
  * 
  * state: 
@@ -7,5 +10,9 @@
  */
 
  const Documentation = () => {
-
+    return (
+        <Text>Documentation!</Text>
+    )
 }
+
+export default Documentation;

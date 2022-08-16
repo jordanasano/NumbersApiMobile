@@ -1,3 +1,6 @@
+import React from "react";
+import { Text } from "react-native";
+
 /** Fact Display
  * 
  * state: 
@@ -9,5 +12,9 @@
  */
 
  const FactDisplay = () => {
-
+    return (
+        <Text>Fact Display!</Text>
+    )
 }
+
+export default FactDisplay;
