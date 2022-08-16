@@ -7,7 +7,8 @@ import React from "react";
  * isSubmitting (boolean)
  * widgetFact (str)
  * displayPath (str)
- * randomAPICall (func)
+ * apiCall (func)
+ * updateWidget (func)
  * addFact (func)
  * 
  * FactContainer -> WidgetContainer-> RandomFactLinks FactDisplay
@@ -16,10 +17,10 @@ import React from "react";
 import FactDisplay from "./FactDisplay";
 import RandomFactLinks from "./RandomFactLinks";
 
- const WidgetContainer = ({widgetFact, displayPath}) => {
+ const WidgetContainer = ({widgetFact, displayPath, apiCall, updateWidget}) => {
     return (
         <>
-            <RandomFactLinks />
+            <RandomFactLinks apiCall={apiCall} updateWidget={updateWidget}/>
             <FactDisplay widgetFact={widgetFact} displayPath={displayPath} />
         </>
     )

@@ -6,7 +6,7 @@
  *-widget
  *props: none
  *
- *App -> FactContainer, Documentation -> ExampleContainer, Socials, WidgetContainer
+ *App -> FactContainer, Documentation, Title -> ExampleContainer, Socials, WidgetContainer
  */
 
 //hello!
@@ -32,6 +32,7 @@ import {
 
 import Documentation from './Documentation';
 import FactContainer from './FactContainer';
+import Title from './Title';
 
 const Section = ({children, title}) => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -68,7 +69,7 @@ const App = () => {
 
   return (
     <View style={backgroundStyle}>
-      <Text>Numbers API v2</Text>
+      <Title />
       <FactContainer />
       <Documentation />
     </View>

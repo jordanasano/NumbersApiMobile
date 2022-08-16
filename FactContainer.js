@@ -31,7 +31,7 @@ const FactContainer = () => {
 
     return (
         <>
-            <WidgetContainer widgetFact={widgetFact} displayPath={displayPath}/>
+            <WidgetContainer apiCall={apiCall} updateWidget={updateWidget} widgetFact={widgetFact} displayPath={displayPath}/>
             <Socials /> 
             <ExampleContainer apiCall={apiCall} updateWidget={updateWidget} />
         </>
