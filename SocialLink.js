@@ -1,5 +1,5 @@
 import React, {useCallback} from "react";
-import { Image, Linking, Button, Alert } from "react-native";
+import { Linking, Button, Alert } from "react-native";
 
 /** Social Link
  * 

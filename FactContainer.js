@@ -1,7 +1,7 @@
 import ExampleContainer from "./ExampleContainer";
 import WidgetContainer from "./WidgetContainer";
 import Socials from "./Socials";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Text } from "react-native";
 
@@ -19,9 +19,10 @@ import { Text } from "react-native";
 const FactContainer = () => {
     const [widgetFact, setWidgetFact] = useState('Default fact');
     const [displayPath, setDisplayPath] = useState('5');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     async function apiCall(endpoint) {
-        return await axios.get(endpoint); 
+        return await axios.get(endpoint);
     }
 
     function updateWidget(fact, path) {
@@ -29,11 +30,23 @@ const FactContainer = () => {
         setDisplayPath(path);
     }
 
+    function handleSubmitClick() {
+        setIsSubmitting(s => !s);
+    }
+
     return (
         <>
-            <WidgetContainer apiCall={apiCall} updateWidget={updateWidget} widgetFact={widgetFact} displayPath={displayPath}/>
-            <Socials /> 
-            <ExampleContainer apiCall={apiCall} updateWidget={updateWidget} />
+            <WidgetContainer 
+                apiCall={apiCall} 
+                updateWidget={updateWidget} 
+                widgetFact={widgetFact} 
+                displayPath={displayPath} 
+                isSubmitting={isSubmitting}
+                handleSubmitClick={handleSubmitClick} />
+            <Socials />
+            <ExampleContainer 
+                apiCall={apiCall} 
+                updateWidget={updateWidget} />
         </>
     )
 }
