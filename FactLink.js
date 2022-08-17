@@ -1,4 +1,5 @@
 import React from "react";
+import { StyleSheet } from "react-native";
 import {Text} from 'react-native';
 
 
@@ -24,9 +25,18 @@ const FactLink = ({ path, apiCall, updateWidget }) => {
     
     return (
         <>
-            <Text onPress={handlePress}>{path}</Text>
+            <Text style={styles.factLink} onPress={handlePress}>{path}</Text>
         </>
     )
 }
+
+const styles = StyleSheet.create({
+    factLink: {
+        fontSize: 15,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        color: 'red'
+    }
+});
 
 export default FactLink;

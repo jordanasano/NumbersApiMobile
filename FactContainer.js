@@ -17,8 +17,12 @@ import { Text } from "react-native";
  * App-> Fact Container -> WidgetContainer, Socials, ExampleContainer
  */
 const FactContainer = () => {
-    const [widgetFact, setWidgetFact] = useState('Default fact');
+    const [widgetFact, setWidgetFact] = useState(
+        '5 is the holy number of Discordianism, ' +
+        'as dictated by the Law of Fives.');
     const [displayPath, setDisplayPath] = useState('5');
+
+    // State for implementing submitting a new fact
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     async function apiCall(endpoint) {
@@ -30,12 +34,16 @@ const FactContainer = () => {
         setDisplayPath(path);
     }
 
+    // Function for implementing button for submitting a new fact
     function handleSubmitClick() {
         setIsSubmitting(s => !s);
     }
 
     return (
         <>
+            <ExampleContainer 
+                apiCall={apiCall} 
+                updateWidget={updateWidget} />
             <WidgetContainer 
                 apiCall={apiCall} 
                 updateWidget={updateWidget} 
@@ -44,9 +52,6 @@ const FactContainer = () => {
                 isSubmitting={isSubmitting}
                 handleSubmitClick={handleSubmitClick} />
             <Socials />
-            <ExampleContainer 
-                apiCall={apiCall} 
-                updateWidget={updateWidget} />
         </>
     )
 }

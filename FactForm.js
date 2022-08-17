@@ -2,7 +2,8 @@ import axios from 'axios';
 import React, {useState} from 'react';
 import {TextInput, Text, Alert} from 'react-native';
 import styles from './App';
-import qs from 'qs';
+//TODO: npm i qs if using it
+// import qs from 'qs';
 
 /**Fact Form
  *
@@ -14,7 +15,7 @@ import qs from 'qs';
  *
  * WidgetContainer -> FactForm
  */
-
+// TODO: Finish and implement form for further study
 const FactForm = ({submitFact, handleSubmitClick}) => {
   const [fact, setFact] = useState('');
   async function submitFact() {

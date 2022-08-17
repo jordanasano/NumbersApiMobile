@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, ActivityIndicator} from 'react-native';
+import {Text, View, ActivityIndicator, StyleSheet } from 'react-native';
 
 /** ExampleBox
  *
@@ -56,11 +56,26 @@ const ExampleBox = ({apiCall, category, updateWidget}) => {
 
   return (
     <View>
-      <Text>{category}</Text>
-      <Text onPress={handlePress}>{baseURL + factData.path}</Text>
+      <Text style={styles.title}>{category}</Text>
+      <Text style={styles.url} onPress={handlePress}>{baseURL + factData.path}</Text>
       <Text>{factData.fact}</Text>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  title: {
+    fontSize: 15,
+    textAlign: 'center',
+    fontWeight: 'bold'
+  },
+  url: {
+    fontSize: 13,
+    textAlign: 'center',
+    fontWeight:'bold',
+    fontStyle: 'italic',
+    color:'red'
+  }
+});
 
 export default ExampleBox;

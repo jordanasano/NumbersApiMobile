@@ -32,4 +32,5 @@ const RandomFactLinks = ({apiCall, updateWidget}) => {
   );
 };
 
+
 export default RandomFactLinks;

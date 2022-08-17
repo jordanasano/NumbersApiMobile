@@ -1,18 +1,17 @@
 import React from "react";
-import { Text } from "react-native";
-import FactForm from "./FactForm";
+import { StyleSheet, View } from "react-native";
+
+// FactForm not finished, for further study
+// import FactForm from "./FactForm";
 
 /** Widget Container
  * 
- * state: 
+ * state: none
  * props: 
- * isSubmitting (boolean)
  * widgetFact (str)
  * displayPath (str)
  * apiCall (func)
  * updateWidget (func)
- * addFact (func)
- * handleSubmitClick (func)
  * 
  * FactContainer -> WidgetContainer-> RandomFactLinks FactDisplay
  */
@@ -20,25 +19,31 @@ import FactForm from "./FactForm";
 import FactDisplay from "./FactDisplay";
 import RandomFactLinks from "./RandomFactLinks";
 
-const WidgetContainer = ({ widgetFact, displayPath, apiCall, updateWidget, isSubmitting, handleSubmitClick }) => {
-    
-    return (
-        <>
-            <RandomFactLinks apiCall={apiCall} updateWidget={updateWidget} />
-            {isSubmitting
-                ?
-                <>
-                    <FactForm />
-                </>
-                :
-                <>
-                    <FactDisplay widgetFact={widgetFact} displayPath={displayPath} />
-                    <Text onPress={handleSubmitClick}>Submit a fact!</Text>
-                </>
-            }
+const WidgetContainer = ({ widgetFact, displayPath, apiCall, updateWidget }) => {
 
-        </>
+    return (
+        <View>
+            <RandomFactLinks
+                apiCall={apiCall}
+                updateWidget={updateWidget} />
+            <FactDisplay
+                widgetFact={widgetFact}
+                displayPath={displayPath}
+                updateWidget={updateWidget}
+                apiCall={apiCall} />
+            {/* <Text onPress={handleSubmitClick}>Submit a fact!</Text>      */}
+        </View>
     )
 }
-
+const styles = StyleSheet.create({
+    randomFactLinks: {
+        fontSize: 15,
+        textAlign: 'center',
+        fontWeight: 'bold'
+    },
+    subtitle: {
+        fontSize: 15,
+        textAlign: 'center',
+    }
+});
 export default WidgetContainer;

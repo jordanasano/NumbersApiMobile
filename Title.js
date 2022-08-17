@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Text} from 'react-native';
+import {Text, StyleSheet} from 'react-native';
 
 /** Title and subtitle
  *
@@ -34,10 +34,22 @@ const Title = () => {
 
   return (
     <>
-      <Text>NUMBERS API V2</Text>
-      <Text>{taglines[taglineIndex]}</Text>
+      <Text style={styles.title}>NUMBERS API V2</Text>
+      <Text style={styles.subtitle}>{taglines[taglineIndex]}</Text>
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  title: {
+    fontSize:25,
+    textAlign:'center',
+    fontWeight:'bold'
+  },
+  subtitle: {
+    fontSize:15,
+    textAlign:'center',
+  }
+});
 
 export default Title;
