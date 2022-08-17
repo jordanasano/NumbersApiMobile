@@ -4,7 +4,7 @@ import {Text, StyleSheet} from 'react-native';
 /** Title and subtitle
  *
  * state:
- * -subtitle (str)
+ * -taglineIndex (int)
  *
  * props: none
  *
@@ -21,6 +21,9 @@ const Title = () => {
     'Let your statistics tell tales and dates come to life',
   ];
 
+  /**
+   * every 30 seconds, grabs next tagline in array to display as subtitle
+   */
   useEffect(() => {
     function updateSubtitle() {
       if (taglineIndex < 5) {
@@ -42,14 +45,14 @@ const Title = () => {
 
 const styles = StyleSheet.create({
   title: {
-    fontSize:25,
-    textAlign:'center',
-    fontWeight:'bold'
+    fontSize: 25,
+    textAlign: 'center',
+    fontWeight: 'bold',
   },
   subtitle: {
-    fontSize:15,
-    textAlign:'center',
-  }
+    fontSize: 15,
+    textAlign: 'center',
+  },
 });
 
 export default Title;

@@ -1,19 +1,5 @@
 const documentation = `## Usage Examples
 
-### jQuery
-
-HTML:
-
-    We now have more users than < span id = "number" ></span > !
-
-    JavaScript:
-
-$.get('http://numbersapi.com/1337/trivia?notfound=floor&fragment', function (data) {
-    $('#number').text(data);
-});
-
-Direct cross - origin requests like this are possible on browsers that support[CORS](http://en.wikipedia.org/wiki/Cross-Origin_Resource_Sharing). Live demo on [JSFiddle](http://jsfiddle.net/divad12/ffHEh/).
-
 ## Query Parameter Options
 
 ### Fragment

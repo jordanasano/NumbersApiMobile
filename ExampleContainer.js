@@ -5,8 +5,8 @@ import ExampleBox from './ExampleBox';
  *
  * state: none
  * props:
- * -api call function
- * -updateWidget
+ * -apiCall (func)
+ * -updateWidget (func)
  *
  * FactContainer -> ExampleContainer -> ExampleBox
  */

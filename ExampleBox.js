@@ -3,10 +3,11 @@ import {Text, View, ActivityIndicator, StyleSheet} from 'react-native';
 
 /** ExampleBox
  *
- * state: none
+ * state:
+ * -factData (obj) like: {fact: '5 is great', path: '5/math'}
  * props:
- * -apiCall function
- * -updateWidget (function)
+ * -apiCall (func)
+ * -updateWidget (func)
  * -category (str)
  *
  * ExampleContainer -> ExampleBox
@@ -16,21 +17,24 @@ const ExampleBox = ({apiCall, category, updateWidget}) => {
   const [factData, setFactData] = useState({fact: null, path: null});
 
   const randomNum = Math.floor(Math.random() * 255);
-  let baseURL = `http://numbersapi.com/`;
+  const baseURL = `http://numbersapi.com/`;
   let path = null;
+
   if (category === 'Math') {
     path = `${randomNum}/math`;
-  }
-  if (category === 'Trivia') {
+  } else if (category === 'Trivia') {
     path = `${randomNum}`;
-  }
-  if (category === 'Date') {
+  } else if (category === 'Date') {
     const today = new Date();
     const dd = String(today.getDate()).padStart(2, '0');
     const mm = String(today.getMonth() + 1).padStart(2, '0');
     path = `${mm}/${dd}/date`;
   }
 
+  /**
+   * after mount, makes api call to get fact from db
+   * updates state with fact and path
+   */
   useEffect(() => {
     async function populateFact() {
       const response = await apiCall(baseURL + path);
@@ -40,6 +44,11 @@ const ExampleBox = ({apiCall, category, updateWidget}) => {
     populateFact();
   }, []);
 
+  /**
+   * makes api call to get fact from db
+   * updates state with fact and path
+   * updates widget fact and path
+   */
   function handlePress() {
     async function populateFact() {
       const response = await apiCall(baseURL + path);
@@ -50,6 +59,7 @@ const ExampleBox = ({apiCall, category, updateWidget}) => {
     populateFact();
   }
 
+  //diplays loading icon on first render
   if (factData.fact === null) {
     return <ActivityIndicator size="small" />;
   }
@@ -95,8 +105,8 @@ const styles = StyleSheet.create({
     color: '#649CDF',
   },
   fact: {
-    margin: 5
-  }
+    margin: 5,
+  },
 });
 
 export default ExampleBox;

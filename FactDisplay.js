@@ -11,16 +11,28 @@ import {Text, TextInput, StyleSheet, View} from 'react-native';
  * -displayPath (str)
  * -updateWidget (func)
  *
- * WidgetContainer-> RandomFactLinks FactDisplay
+ * WidgetContainer-> FactDisplay
  */
 
 const FactDisplay = ({widgetFact, displayPath, updateWidget, apiCall}) => {
   const [path, setPath] = useState('');
+
+  /**
+   * takes inputPath like: '5/math'
+   * updates state of widget and path
+   */
   function updateWidgetOnChange(inputPath) {
     updateWidget(widgetFact, inputPath);
     setPath(inputPath);
   }
 
+  /**
+   *if path is given: tries to make api call for new fact from db
+   *  if successful: updates widget with new fact and provided path
+   *  if unseccessful: updates widget with current fact and displays error msg
+   *if path is empty: updates widget with current fact and displays error msg
+   *
+   */
   async function getFact() {
     const baseURL = `http://numbersapi.com/`;
     if (path === '') {
@@ -60,16 +72,16 @@ const styles = StyleSheet.create({
   inputArea: {
     backgroundColor: '#BEDAFC',
     fontSize: 20,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   baseUrl: {
     fontSize: 20,
-    marginLeft: 10
+    marginLeft: 10,
   },
   fact: {
     fontSize: 20,
-    margin: 10
-  }
+    margin: 10,
+  },
 });
 
 export default FactDisplay;

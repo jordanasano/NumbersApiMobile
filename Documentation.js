@@ -1,28 +1,24 @@
-import React from "react";
-import { useWindowDimensions, ActivityIndicator } from "react-native";
-import MarkdownIt from "markdown-it";
+import React from 'react';
+import {useWindowDimensions} from 'react-native';
+import MarkdownIt from 'markdown-it';
 import RenderHtml from 'react-native-render-html';
-import documentation from "./apiDocumentation";
+import documentation from './apiDocumentation';
 
 /** Documentation
- * 
- * state: 
- * props: 
+ *
+ * state:none
+ * props:none
  *
  * App-> Documentation
  */
 
- const Documentation = () => {
-    const { width } = useWindowDimensions();
-    const md = new MarkdownIt(); 
-    const html = md.render(documentation);
-    const source = {html}
-    return (
-        <RenderHtml
-            contentWidth={width}
-            source={source}
-        />
-    )
-}
+const Documentation = () => {
+  const {width} = useWindowDimensions();
+  const md = new MarkdownIt();
+  const html = md.render(documentation);
+  const source = {html};
+
+  return <RenderHtml contentWidth={width} source={source} />;
+};
 
 export default Documentation;

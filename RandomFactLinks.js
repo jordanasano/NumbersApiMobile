@@ -4,7 +4,7 @@ import {View, StyleSheet} from 'react-native';
 
 /** Random Fact Links
  *
- * state:
+ * state: none
  * props:
  * -apiCall (func)
  * -updateWidget (func)
@@ -14,6 +14,7 @@ import {View, StyleSheet} from 'react-native';
 
 const RandomFactLinks = ({apiCall, updateWidget}) => {
   const paths = ['random/year', 'random/math', 'random/trivia', 'random/date'];
+
   return (
     <View style={styles.container}>
       {paths.map((p, idx) => (
