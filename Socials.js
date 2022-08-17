@@ -9,6 +9,8 @@ import SocialLink from "./SocialLink";
  */
 
  const Socials = () => {
+    //TODO: need to implement functionality for sharing a fact to these social
+    //media links 
     const socialLinks = [
         ['https://twitter.com/', 'Twitter'], 
         ['https://facebook.com/', 'Facebook']

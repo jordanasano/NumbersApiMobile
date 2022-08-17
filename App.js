@@ -68,11 +68,11 @@ const App = () => {
   };
 
   return (
-    <View style={backgroundStyle}>
+    <ScrollView style={backgroundStyle}>
       <Title />
       <FactContainer />
       <Documentation />
-    </View>
+    </ScrollView>
   )
 };
 

@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
         textAlign: 'center',
         fontWeight: 'bold',
-        color: 'red'
+        color: '#649CDF'
     }
 });
 

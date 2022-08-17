@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, ActivityIndicator, StyleSheet } from 'react-native';
+import {Text, View, ActivityIndicator, StyleSheet} from 'react-native';
 
 /** ExampleBox
  *
@@ -55,26 +55,47 @@ const ExampleBox = ({apiCall, category, updateWidget}) => {
   }
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.title}>{category}</Text>
-      <Text style={styles.url} onPress={handlePress}>{baseURL + factData.path}</Text>
-      <Text>{factData.fact}</Text>
+      <Text style={styles.url} onPress={handlePress}>
+        {baseURL + factData.path}
+      </Text>
+      <Text style={styles.fact}>{factData.fact}</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: 'black',
+    padding: 5,
+    margin: 10,
+    marginLeft: 50,
+    marginRight: 50,
+  },
   title: {
     fontSize: 15,
     textAlign: 'center',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    borderWidth: 2,
+    borderStyle: 'solid',
+    borderColor: 'black',
+    padding: 5,
+    marginTop: 5,
+    marginLeft: 50,
+    marginRight: 50,
   },
   url: {
     fontSize: 13,
     textAlign: 'center',
-    fontWeight:'bold',
+    fontWeight: 'bold',
     fontStyle: 'italic',
-    color:'red'
+    color: '#649CDF',
+  },
+  fact: {
+    margin: 5
   }
 });
 
