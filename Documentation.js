@@ -1,5 +1,8 @@
 import React from "react";
-import { Text } from "react-native";
+import { useWindowDimensions, ActivityIndicator } from "react-native";
+import MarkdownIt from "markdown-it";
+import RenderHtml from 'react-native-render-html';
+import documentation from "./apiDocumentation";
 
 /** Documentation
  * 
@@ -10,8 +13,15 @@ import { Text } from "react-native";
  */
 
  const Documentation = () => {
+    const { width } = useWindowDimensions();
+    const md = new MarkdownIt(); 
+    const html = md.render(documentation);
+    const source = {html}
     return (
-        <Text>Documentation!</Text>
+        <RenderHtml
+            contentWidth={width}
+            source={source}
+        />
     )
 }
 
