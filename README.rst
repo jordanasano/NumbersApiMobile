@@ -1,3 +1,3 @@
 # NumbersApiMobile
 .. image:: WhiteBoard.png
-   :width: 45em
+   :width: 400em
