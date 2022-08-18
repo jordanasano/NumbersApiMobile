@@ -1,5 +1,5 @@
-import React, {useCallback} from 'react';
-import {Linking, Button, Alert} from 'react-native';
+import React, { useCallback } from 'react';
+import { Linking, Button, Alert } from 'react-native';
 
 /** Social Link
  *
@@ -11,7 +11,7 @@ import {Linking, Button, Alert} from 'react-native';
  * Socials -> SocialLink
  */
 
-const SocialLink = ({socialUrl, children}) => {
+const SocialLink = ({ socialUrl, children }) => {
   /**
    * tries to open url in browser
    *  if unsuccessful: displays alert message

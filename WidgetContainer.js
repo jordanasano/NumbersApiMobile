@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import FactDisplay from './FactDisplay';
 import RandomFactLinks from './RandomFactLinks';
 
@@ -8,20 +8,20 @@ import RandomFactLinks from './RandomFactLinks';
  * state: none
  * props:
  * widgetFact (str)
- * displayPath (str)
+ * widgetPath (str)
  * apiCall (func)
  * updateWidget (func)
  *
  * FactContainer -> WidgetContainer-> RandomFactLinks FactDisplay
  */
 
-const WidgetContainer = ({widgetFact, displayPath, apiCall, updateWidget}) => {
+const WidgetContainer = ({ widgetFact, widgetPath, apiCall, updateWidget }) => {
   return (
     <View>
       <RandomFactLinks apiCall={apiCall} updateWidget={updateWidget} />
       <FactDisplay
         widgetFact={widgetFact}
-        displayPath={displayPath}
+        widgetPath={widgetPath}
         updateWidget={updateWidget}
         apiCall={apiCall}
       />

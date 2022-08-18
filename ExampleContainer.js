@@ -12,14 +12,14 @@ import ExampleBox from './ExampleBox';
  */
 
 const ExampleContainer = ({ apiCall, updateWidget }) => {
-    const boxes = ['Math', 'Trivia', 'Date'];
+    const categories = ['Math', 'Trivia', 'Date'];
     return (
         <>
-            {boxes.map((b, idx) => (
-                <ExampleBox 
-                    key={idx} 
-                    category={b} 
-                    apiCall={apiCall} 
+            {categories.map((c, idx) => (
+                <ExampleBox
+                    key={idx}
+                    category={c}
+                    apiCall={apiCall}
                     updateWidget={updateWidget} />
             ))}
         </>

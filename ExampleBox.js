@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Text,
   View,
@@ -6,7 +6,7 @@ import {
   StyleSheet,
   TouchableHighlight,
 } from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 /** ExampleBox
  *
@@ -20,8 +20,8 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
  * ExampleContainer -> ExampleBox
  */
 
-const ExampleBox = ({apiCall, category, updateWidget}) => {
-  const [factData, setFactData] = useState({fact: null, path: null});
+const ExampleBox = ({ apiCall, category, updateWidget }) => {
+  const [factData, setFactData] = useState({ fact: null, path: null });
 
   const randomNum = Math.floor(Math.random() * 255);
   const baseURL = `http://numbersapi.com/`;
@@ -46,7 +46,7 @@ const ExampleBox = ({apiCall, category, updateWidget}) => {
     async function populateFact() {
       const response = await apiCall(baseURL + path);
       const fact = response.data;
-      setFactData({fact: fact, path: path});
+      setFactData({ fact: fact, path: path });
     }
     populateFact();
   }, []);
@@ -60,7 +60,7 @@ const ExampleBox = ({apiCall, category, updateWidget}) => {
     async function populateFact() {
       const response = await apiCall(baseURL + path);
       const fact = response.data;
-      setFactData({fact: fact, path: path});
+      setFactData({ fact: fact, path: path });
       updateWidget(fact, path);
     }
     populateFact();

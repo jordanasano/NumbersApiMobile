@@ -1,6 +1,6 @@
 import React from 'react';
 import FactLink from './FactLink';
-import {View, StyleSheet} from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 /** Random Fact Links
  *
@@ -12,7 +12,7 @@ import {View, StyleSheet} from 'react-native';
  * WidgetContainer-> RandomFactLinks -> FactLink
  */
 
-const RandomFactLinks = ({apiCall, updateWidget}) => {
+const RandomFactLinks = ({ apiCall, updateWidget }) => {
   const paths = ['random/year', 'random/math', 'random/trivia', 'random/date'];
 
   return (

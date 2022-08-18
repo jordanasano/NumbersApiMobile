@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Text, TextInput, StyleSheet, View} from 'react-native';
+import React, { useState } from 'react';
+import { Text, TextInput, StyleSheet, View } from 'react-native';
 
 /** Fact Display
  *
@@ -8,13 +8,13 @@ import {Text, TextInput, StyleSheet, View} from 'react-native';
  * props:
  * -widgetFact (str)
  * -apiCall (func)
- * -displayPath (str)
+ * -widgetPath (str)
  * -updateWidget (func)
  *
  * WidgetContainer-> FactDisplay
  */
 
-const FactDisplay = ({widgetFact, displayPath, updateWidget, apiCall}) => {
+const FactDisplay = ({ widgetFact, widgetPath, updateWidget, apiCall }) => {
   const [path, setPath] = useState('');
 
   /**
@@ -54,7 +54,7 @@ const FactDisplay = ({widgetFact, displayPath, updateWidget, apiCall}) => {
       <TextInput
         style={styles.inputArea}
         onChangeText={updateWidgetOnChange}
-        value={displayPath}
+        value={widgetPath}
         onSubmitEditing={getFact}
       />
       <Text style={styles.fact}>{widgetFact}</Text>

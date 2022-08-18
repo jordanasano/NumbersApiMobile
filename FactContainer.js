@@ -8,7 +8,7 @@ import axios from 'axios';
  *
  * state:
  * -widgetFact (str)
- * -displayPath (str)
+ * -widgetPath (str)
  * props: none
  *
  * App-> Fact Container -> WidgetContainer, Socials, ExampleContainer
@@ -18,7 +18,7 @@ const FactContainer = () => {
     '5 is the holy number of Discordianism, ' +
       'as dictated by the Law of Fives.',
   );
-  const [displayPath, setDisplayPath] = useState('5');
+  const [widgetPath, setWidgetPath] = useState('5');
 
   /**
    * takes endpoint like: 'http://numbersapi.com/5/math'
@@ -34,7 +34,7 @@ const FactContainer = () => {
    */
   function updateWidget(fact, path) {
     setWidgetFact(fact);
-    setDisplayPath(path);
+    setWidgetPath(path);
   }
 
   return (
@@ -44,7 +44,7 @@ const FactContainer = () => {
         apiCall={apiCall}
         updateWidget={updateWidget}
         widgetFact={widgetFact}
-        displayPath={displayPath}
+        widgetPath={widgetPath}
       />
       <Socials />
     </>

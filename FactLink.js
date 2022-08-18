@@ -1,6 +1,6 @@
 import React from 'react';
-import {StyleSheet, TouchableHighlight, View, Text} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import { StyleSheet, TouchableHighlight, View, Text } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 /**Fact Link
  *
@@ -13,7 +13,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
  * RandomRactLinks -> FactLink
  *
  */
-const FactLink = ({path, apiCall, updateWidget}) => {
+const FactLink = ({ path, apiCall, updateWidget }) => {
   const baseURL = 'http://numbersapi.com/';
 
   /**
