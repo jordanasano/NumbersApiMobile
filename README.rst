@@ -1,4 +1,4 @@
-##NumbersApiMobile
+NumbersApiMobile
 
 Our mobile app interacts with the existing api that can be found at numbersapi.com. 
 
@@ -19,11 +19,11 @@ Displays api call using user input for the endpoint along with error handling fo
    :height: 50em
 
 
-#Technologies
-| React
-| React-Native
-| React-Native-Render-Html
-| Axios
-| MarkDown-It
+Technologies
+   React
+   React-Native
+   React-Native-Render-Html
+   Axios
+   MarkDown-It
 
 
