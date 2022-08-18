@@ -1,6 +1,6 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
-import {Text} from 'react-native';
+import {StyleSheet, TouchableHighlight, View, Text} from 'react-native';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 /**Fact Link
  *
@@ -27,11 +27,14 @@ const FactLink = ({path, apiCall, updateWidget}) => {
   }
 
   return (
-    <>
-      <Text style={styles.factLink} onPress={handlePress}>
-        {path}
-      </Text>
-    </>
+    <View>
+      <TouchableHighlight
+        activeOpacity={0.2}
+        underlayColor={Colors.lighter}
+        onPress={handlePress}>
+        <Text style={styles.factLink}>{path}</Text>
+      </TouchableHighlight>
+    </View>
   );
 };
 

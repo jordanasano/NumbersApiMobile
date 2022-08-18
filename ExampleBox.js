@@ -1,5 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, ActivityIndicator, StyleSheet} from 'react-native';
+import {
+  Text,
+  View,
+  ActivityIndicator,
+  StyleSheet,
+  TouchableHighlight,
+} from 'react-native';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 /** ExampleBox
  *
@@ -67,9 +74,12 @@ const ExampleBox = ({apiCall, category, updateWidget}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{category}</Text>
-      <Text style={styles.url} onPress={handlePress}>
-        {baseURL + factData.path}
-      </Text>
+      <TouchableHighlight
+        activeOpacity={0.2}
+        underlayColor={Colors.lighter}
+        onPress={handlePress}>
+        <Text style={styles.url}>{baseURL + factData.path}</Text>
+      </TouchableHighlight>
       <Text style={styles.fact}>{factData.fact}</Text>
     </View>
   );
