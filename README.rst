@@ -1,4 +1,5 @@
 NumbersApiMobile
+================
 
 Our mobile app interacts with the existing api that can be found at numbersapi.com. 
 
@@ -20,6 +21,8 @@ Displays api call using user input for the endpoint along with error handling fo
 
 
 Technologies
+------------
+.. parsed-literal::
    React
    React-Native
    React-Native-Render-Html
