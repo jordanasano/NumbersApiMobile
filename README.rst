@@ -4,9 +4,7 @@
    :width: 400em
 
 .. image:: numbersApiMobileDemo1.gif
-   :width: 200em
-   :height: 300em
+   :height: 150em
    
 .. image:: numbersApiMobileDemo2.gif
-   :width: 200em
-   :height: 300em
+   :height: 150em
