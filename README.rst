@@ -1,4 +1,4 @@
 # NumbersApiMobile
 
-.. image:: WhiteBoard.png
+.. image:: ./WhiteBoard.png
    :width: 400em
